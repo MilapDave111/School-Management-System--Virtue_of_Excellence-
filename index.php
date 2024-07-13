@@ -1,0 +1,481 @@
+<?php include("includes/config.php") ?>
+<style>
+        .owl-carousel-item img {
+            height: 100%; /* Set a fixed height for the images */
+            width: 100%;
+            object-fit: cover; /* Ensure the image covers the entire container */
+        }
+
+        /* Optional: Adjust the carousel height based on your design */
+        .owl-carousel {
+            height: 700px; /* Set the desired height */
+        }
+    </style>
+<?php include("header.php") ?>    
+<?php 
+
+
+    if(isset($_POST['submit']))
+    {
+        $name = isset($_POST['name']) ? $_POST['name'] : '';
+  
+  $email = isset($_POST['email']) ? $_POST['email'] : '';
+  $quiry = isset($_POST['quiry']) ? $_POST['quiry'] : '';
+
+    mysqli_query($db_conn,"INSERT INTO `inquiry` (`title`,`email`,`quiry`) 
+    VALUES ('$name',' $email','$quiry')");
+    }
+  
+  ?>
+  
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg">
+    
+    <img class="img-fluid " src="img/limg2.png" alt="" style="width:22%; height:22%;margin-left:10px">
+   
+    
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="index.php" class="nav-item nav-link active" style="color:#03285e"><b>Home</b></a>
+            <a href="about.php" class="nav-item nav-link" style="color:#03285e"><b>About</b></a>
+           
+            <a href="contact.php" class="nav-item nav-link" style="color:#03285e"><b>Contact</b></a>
+            <?php if (isset($_SESSION['login'])) { ?>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#03285e">
+                        <i class="fa fa-user fa-lg" style="color:#03285e"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="color:#03285e">
+                        <li><a class="dropdown-item" href="http://localhost/Virtue_of_Excellence/admin/dashboard.php">Dashboard</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a href="logout.php" class="dropdown-item">Logout</a></li>
+                    </ul>
+                </div>
+            <?php } else { ?>
+                <a href="../Virtue_of_Excellence/login.php" class="nav-item nav-link active" style="color:#03285e"><i class="fa fa-user" style="color:#03285e"></i> <b>Login</b></a>
+            <?php } ?>
+        </div>
+    </div>
+</nav>
+
+    <!-- Nav    bar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/bbg.png" alt="" style="width:100%;height:100%">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgb(0, 27, 82,.7);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                            
+                                <h1 class="display-3 text-white animated slideInDown">Fostering Brilliance Every Day</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Illuminating minds daily, we nurture brilliance through quality education. Join us on a journey where each day brings opportunities to discover, learn, and excel.</p>
+                                <a href="http://localhost/Virtue_of_Excellence/about.php" class="btn text-white py-md-3 px-md-5 me-3 animated slideInLeft" style="background-color:#468ef3;">Read More</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/bggg.png" alt="" style="width:100%;height:100%">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgb(0, 27, 82,.7);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                
+                                <h1 class="display-3 text-white animated slideInDown">Excel with Our Educational Excellence</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Step into a world of educational distinction where every day unfolds as a canvas for knowledge, growth, and achievement. Join us in cultivating brilliance through transformative learning experiences..</p>
+                                <a href="http://localhost/Virtue_of_Excellence/about.php" class="btn text-white py-md-3 px-md-5 me-3 animated slideInLeft" style="background-color:#468ef3;">Read More</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-graduation-cap  mb-4" style="color:#03285e"></i>
+                            <h5 class="mb-3">Skilled Instructors</h5>
+                            <p>Discover daily brilliance with our expertly crafted education, guiding you on a path to success</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-globe  mb-4"  style="color:#03285e"></i>
+                            <h5 class="mb-3">Online Classes</h5>
+                            <p>We offer the convenience of online classes, ensuring education never pauses.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-home  mb-4"  style="color:#03285e"></i>
+                            <h5 class="mb-3">Home Projects</h5>
+                            <p>Empowering students with engaging home projects that foster practical application of knowledge.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-book-open  mb-4"  style="color:#03285e"></i>
+                            <h5 class="mb-3">Book Library</h5>
+                            <p>Dive into endless knowledge with our school's library, a hub for exploration and discovery.  </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/abouttt.jpg" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title text-start pe-3" style="color:#468ef3;">About Us</h6>
+                    <h1 class="mb-4" style="color:#03285e;">Welcome to Virtue Of Excellence</h1>
+                    <p class="mb-4">Welcome to Virtue of Excellence, where a commitment to academic distinction meets a nurturing environment for personal growth.</p>
+                    <p class="mb-4">At Virtue of Excellence, we pride ourselves on providing a holistic education that inspires curiosity, fosters resilience, and prepares students for a future of excellence.</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right  me-2"  style="color:#468ef3"></i>Skilled Instructors</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right  me-2" style="color:#468ef3"></i>Online Classes</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right  me-2" style="color:#468ef3"></i>International Certificate</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right  me-2" style="color:#468ef3"></i>Skilled Instructors</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right  me-2" style="color:#468ef3"></i>Online Classes</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right  me-2" style="color:#468ef3"></i>International Certificate</p>
+                        </div>
+                    </div>
+                    <a href="http://localhost/Virtue_of_Excellence/about.php" class="btn text-white py-md-3 px-md-5 me-3 animated slideInLeft" style="background-color:#03285e;">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    
+
+
+    <!-- Courses Start -->
+    <div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title text-center px-3" style="color:#468ef3">Courses</h6>
+            <h1 class="mb-5" style="color:#03285e;">Popular Courses</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <?php
+            $query = mysqli_query($db_conn,"SELECT * FROM courses WHERE `is_deleted`='0' ORDER BY id desc LIMIT 0, 4");
+            while($course = mysqli_fetch_object($query)) {?>
+                <div class="col-lg-3 col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="course-item" style="background-color:rgb(2, 48, 115,0.9); overflow: hidden;">
+                        <div class="position-relative overflow-hidden" style="height: 300px;"> <!-- Set a fixed height for the container -->
+                            <img class="img-fluid" src="./dist/uploads/<?php echo $course->image?>" style="object-fit: cover; object-position: center; width: 100%; height: 100%;" >
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h4 class="mb-0 text-white">Price: 2500 INR </h4>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-warning"></small>
+                                <small class="fa fa-star text-warning"></small>
+                                <small class="fa fa-star text-warning"></small>
+                                <small class="fa fa-star text-warning"></small>
+                                <small class="fa fa-star text-warning"></small>
+                            </div>
+                            <h5 class="mb-4 text-white" ><?php echo $course->name?></h5>
+                            <button class="btn btn-block text-white btn-sm mb-4" style="background-color:#468ef3;">Enroll Now</button>
+                        </div>
+                        <div class="d-flex border-top">
+                            <small class="flex-fill text-center border-end py-2 text-white">
+                                <i class="fa fa-clock text-primary me-2 text-white"></i>
+                                <b class="text-white">Duration: <?php echo $course->duration?></b>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            <?php }?>
+        </div>
+    </div>
+</div>
+
+    <!-- Courses End -->
+
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title text-center px-3" style="color:#468ef3">Teachers</h6>
+            <h1 class="mb-5" style="color:#03285e;">Expert Teachers</h1>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <?php
+            $query = mysqli_query($db_conn, "SELECT * FROM accounts WHERE type='teacher' ORDER BY id desc LIMIT 0, 4");
+            while ($teacher = mysqli_fetch_object($query)) {
+            ?>
+                <div class="col-lg-3 col-md-6 " >
+                    <div class="team-item" style="background-color:#F3F3F5; height: 400px; overflow: hidden;">
+                        <div class="position-relative overflow-hidden" style="height: 60%;">
+                            <img class="img-fluid" src="./dist/uploads/<?php echo $teacher->image ?>" style="object-fit: cover; object-position: center; width: 100%; height: 100%;" alt="<?php echo $teacher->name ?> Image">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class=" d-flex justify-content-center pt-2 px-1">
+                                <div class="btn btn-sm-square mx-1" href="" style="background-color:#03285e"><i class="fab text-white fa-facebook-f"></i></div>
+                                <div class="btn btn-sm-square mx-1" href="" style="background-color:#03285e"><i class="fab text-white fa-twitter"></i></div>
+                                <div class="btn btn-sm-square mx-1" href="" style="background-color:#03285e"><i class="fab text-white fa-instagram"></i></div>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0"><?php echo $teacher->name ?></h5> <br>
+                            <small><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i></small>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+</div>
+
+    <!-- Team End -->
+
+    <!-- achivement starts-->
+
+    <div class="container-xxl py-5" style="background:#023073">
+        <div class="container">
+            <div class="row g-5">
+                
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title text-start pe-3" style="color:#468ef3;">Achievements</h6>
+                    <h1 class="mb-4 text-white" style="color:#03285e;">Top Achievements</h1>
+                    <p class="mb-4 text-white">With innovative teaching methods and a commitment to diversity and inclusion, we provide a vibrant learning environment.</p>
+                    <p class="mb-4 text-white">Our students excel not only academically but also in various extracurricular activities, showcasing their diverse talents. Join us on a journey of success, where every student is empowered to reach their full potential.</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0 text-white"><i class="fa fa-arrow-right  me-2 text-white"  style="color:#468ef3"></i>Olampiyad Exams</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0 text-white" ><i class="fa fa-arrow-right text-white me-2" style="color:#468ef3"></i>Khelmahakumbh</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0 text-white"><i class="fa fa-arrow-right text-white me-2" style="color:#468ef3"></i>International Certificate</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0 text-white"><i class="fa fa-arrow-right text-white me-2" style="color:#468ef3"></i>MUN</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0 text-white"><i class="fa fa-arrow-right text-white me-2" style="color:#468ef3"></i>Cultural Events</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0 text-white"><i class="fa fa-arrow-right text-white me-2" style="color:#468ef3"></i>Inter-School Competition</p>
+                        </div>
+                    </div>
+                    <a href="http://localhost/Virtue_of_Excellence/about.php" class="btn text-white py-md-3 px-md-5 me-3 animated slideInLeft" style="background-color:#468ef3;">Read More</a>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/ach.png" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- achivement ends --> 
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center">
+                <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
+                <h1 class="mb-5" >Our Students Say!</h1>
+            </div>
+            
+    <div class="container">
+    <div class="row">
+    <div class=" col-6">
+      <div class="border rounded position-relative">
+        
+        <div class="p-3 text-center ">
+        <img src="img/images.png" alt="" class="rounded-circle border" width="100px;" height="100px;">
+        <h6 class="mb-0 py-2"><b>Vikram Mehta</b></h6>
+         
+          </div>
+        <div class="p-3 text-center ">
+        I appreciate the emphasis on a balanced study routine at this school. The well-designed curriculum and dedicated teachers have made learning not only effective but also enjoyable
+        </div>
+        <i class="fa fa-quote-left fa-3x position-absolute" style="top: 0.5rem; left: 0.5rem; opacity: 0.2;"></i>
+      </div>
+      <div class="text-center mt-n3">
+       
+         
+      </div>
+    </div>
+    <div class=" col-6">
+      <div class="border rounded position-relative">
+        
+        <div class="p-3 text-center ">
+        <img src="img/images.png" alt="" class="rounded-circle border" width="100px;" height="100px;">
+        <h6 class="mb-0 py-2"><b>Priya Sharma</b></h6>
+         
+          </div>
+        <div class="p-3 text-center ">
+        The blend of traditional values and modern education methods has nurtured my academic growth. Grateful for the cultural inclusivity that makes every Indian student feel at home.
+        </div>
+        <i class="fa fa-quote-left fa-3x position-absolute" style="top: 0.5rem; left: 0.5rem; opacity: 0.2;"></i>
+      </div>
+      <div class="text-center mt-n3">
+       
+         
+      </div>
+    </div>
+   
+    </div>
+    </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+        
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="http://localhost/Virtue_of_Excellence/about.php">About Us</a>
+                    <a class="btn btn-link" href="http://localhost/Virtue_of_Excellence/contact.php">Contact Us</a>
+                    
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>virtue@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/course-1.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/course-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/course-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/course-1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Inquiry </h4>
+                    
+                    <form action="" method="POST">
+              <div class="form-group">
+                <label for="title">Your Name</label>  
+                <input required type="text" placeholder="Name" class="form-control" name="name" require>
+                </div>
+                <div class="form-group">
+                <label for="from">Your Email</label>  
+                <input type="email" name="email" placeholder="Email" class="form-control"require>
+                </div>
+                <div class="form-group">
+                <label for="to">Description</label>  
+                <input required type="text" placeholder="Description" class="form-control" name="quiry" require>
+                </div>
+                <div class="form-group">
+                
+                </div>
+                <button name="submit" type="submit" value="submit"class="btn btn-success">Submit</button>
+
+              </form>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Virtue Of Excellence</a>, All Right Reserved.
+
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg text-white btn-lg-square back-to-top" style="background-color:#03285e"><i class="bi bi-arrow-up" ></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

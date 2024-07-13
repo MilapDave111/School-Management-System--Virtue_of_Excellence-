@@ -1,0 +1,16 @@
+.cm-s-sVirtue_of_Excellence span.cm-keyword { color: blue; }
+.cm-s-sVirtue_of_Excellence span.cm-comment { color: darkgreen; }
+.cm-s-sVirtue_of_Excellence span.cm-string { color: red; }
+.cm-s-sVirtue_of_Excellence span.cm-def { color: black; }
+.cm-s-sVirtue_of_Excellence span.cm-variable { color: black; }
+.cm-s-sVirtue_of_Excellence span.cm-variable-2 { color: black; }
+.cm-s-sVirtue_of_Excellence span.cm-atom { color: darkgray; }
+.cm-s-sVirtue_of_Excellence .CodeMirror-linenumber { color: teal; }
+.cm-s-sVirtue_of_Excellence .CodeMirror-activeline-background { background: #ffffff; }
+.cm-s-sVirtue_of_Excellence span.cm-string-2 { color: #FF00FF; }
+.cm-s-sVirtue_of_Excellence span.cm-operator, 
+.cm-s-sVirtue_of_Excellence span.cm-bracket, 
+.cm-s-sVirtue_of_Excellence span.cm-punctuation { color: darkgray; }
+.cm-s-sVirtue_of_Excellence .CodeMirror-gutters { border-right: 3px solid #ffee62; background-color1 #ffffff; }
+.cm-s-sVirtue_of_Excellence div.CodeMirror-selected { background: #ADD6FF; }
+
